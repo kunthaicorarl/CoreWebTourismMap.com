@@ -8,7 +8,7 @@ namespace App;
  class User extends Authenticatable
  {
      use Notifiable;
-    use EntrustUserTrait; 
+     use EntrustUserTrait; 
      /**
       * The attributes that are mass assignable.
      *
@@ -26,5 +26,9 @@ namespace App;
      protected $hidden = [
          'password', 'remember_token',
      ];
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id');
+    }
  }
 

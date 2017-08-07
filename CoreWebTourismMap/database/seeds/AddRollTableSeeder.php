@@ -14,8 +14,8 @@ class AddRollTableSeeder extends Seeder
     {
         $user = User::where('name', '=', 'admin')->first();
 
-// role attach alias
-$user->attachRole($admin); // parameter can be an Role object, array, or id
+     // role attach alias
+     $user->attachRole($admin); // parameter can be an Role object, array, or id
 
 // or eloquent's original technique
 $user->roles()->attach($admin->id); // id only
