@@ -1,0 +1,5 @@
+-Current Version
+   -1.5.0 
+          -add auth
+          -add migrate
+          -add angularjs
