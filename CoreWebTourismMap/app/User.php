@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use App\Notebook;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -28,10 +29,10 @@ class User extends Authenticatable
     ];
     public function notebooks()
     {
-        return $this->hasMany(App\Notebook::class);
+        return $this->hasMany(Notebook::class);
     }
      public function roles()
     {
-        return $this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id');
+      return $this->belongsToMany('App\Role', 'role_user', 'role_id', 'user_id');
     }
 }
